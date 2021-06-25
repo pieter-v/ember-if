@@ -1,7 +1,10 @@
-{{page-title "EmberIf"}}
-
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div>
+  {{#if this.undefinedAction}}
+    this.undefinedAction => true
+  {{else}}
+    this.undefinedAction => false
+  {{/if}}
+</div>
+<button type="button" {{on "click" (if this.undefinedAction (fn this.undefinedAction "Hello") this.existingAction)}}>
+  Click me
+</button>
